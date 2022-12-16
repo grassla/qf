@@ -35,7 +35,7 @@ class NumerovSolverPIB:
             self.psi_right[i-1] = self.propagateNumerov(self.x[i+1],self.x[i],self.psi_right[i+1],self.psi_right[i])
 
 fig1=plt.figure()
-@widgets.interact(npoints=n_options)
+@widgets.interact(npoints)
 def update(npoints):
     plt.clf()
     solver=NumerovSolverPIB(0,1,npoints)
