@@ -3,7 +3,6 @@ import numpy.linalg as linalg
 import matplotlib.pyplot as plt
 from scipy import constants
 from scipy.integrate import odeint
-#import timeit
 plt.close("all")
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
@@ -41,10 +40,14 @@ ax1.set_xlabel("x")
 ax1.set_ylabel(r'$\psi_n$')
 ax1.set_ylim(0, 10)
 plt.xlim(-4, 4)
-ax1.legend(loc="lower left") 
-ax2.legend(loc="lower right")
+ax1.set_title("Wavefunction")
 
-
+ax2.plot(x, sol**2)
+ax2.set_xlabel("x")
+ax2.set_ylabel(r'$\psi_n$')
+ax2.set_ylim(0, 10)
+plt.xlim(-4, 4)
+ax2.set_title("Probability")
 
 plt.show()
 
