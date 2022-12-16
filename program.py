@@ -13,8 +13,7 @@ k = 1.0
 a = 1
 U0 = 1
 E = 0.1
-#Define number of points for matrix
-N = 1000
+
 
 while True:
     E = float(input("Input a value for E between 0.1 and 0.2: "))
