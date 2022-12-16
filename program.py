@@ -3,6 +3,7 @@ import numpy.linalg as linalg
 import matplotlib.pyplot as plt
 from scipy import constants
 from scipy.integrate import odeint
+from scipy.special import erf
 plt.close("all")
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
