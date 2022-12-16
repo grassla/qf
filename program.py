@@ -10,7 +10,6 @@ rcParams.update({'figure.autolayout': True})
 
 hbar = 1
 m = 36
-k = 1.0
 a = 1
 U0 = 1
 E = 0.1
@@ -22,34 +21,34 @@ while True:
         U = U0-E
         def f(y,x):
             P = y[1]
-            dy1dx = 72*y[0]*(U0-E-2.71828**(-x**2))
+            dy1dx = 72*y[0]*(U-(2.71828**(-x**2)))
             dy2dx = P
-            ## y2 = 72*y*(U0-E-e**(-x**2))
             return [dy1dx, dy2dx]
         x0 = 0
-        y0 = [1,0]
-        x = np.linspace(x0,100)
+        y0 = [1,.0002]
+        x = np.linspace(-4,4)
+        w = np.linspace(-4,4)
         sol = odeint(f, y0, x)
-        #print(sol)
+        # print(sol)
         break
     else:
         print("E must be between 0.1 and 0.2.")
 
-ax1.plot(x, sol)
-ax1.set_xlabel("x")
-ax1.set_ylabel(r'$\psi_n$')
-ax1.set_ylim(0, 10)
+Pot = (1-(2.71828**(-w**2)))
+plt.plot(w, Pot)       
+plt.plot(x, sol)
+plt.xlabel("x")
+plt.ylabel(r'$\psi_n$')
 plt.xlim(-4, 4)
-ax1.set_title("Wavefunction")
+plt.ylim(-1,1.1)
 
-ax2.plot(x, sol**2)
-ax2.set_xlabel("x")
-ax2.set_ylabel(r'$\psi_n$')
-ax2.set_ylim(0, 10)
-plt.xlim(-4, 4)
-ax2.set_title("Probability")
+plt.title("Wavefunction Plot")
+
 
 plt.show()
+
+plt.show()
+
 
 
 
