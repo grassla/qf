@@ -38,7 +38,7 @@ Pot = (1-(2.71828**(-w**2)))
 plt.plot(w, Pot)       
 plt.plot(x, sol)
 plt.xlabel("x")
-plt.ylabel(r'$\psi_n$')
+plt.ylabel(r'$\psi$')
 plt.xlim(-4, 4)
 plt.ylim(-1,1.1)
 
